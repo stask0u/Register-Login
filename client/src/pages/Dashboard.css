@@ -1,0 +1,58 @@
+.allBackground{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url('../assets/dashboardBackground.jpg');
+    background-size:cover;
+}
+.body-background{
+    background-color: rgba(124, 75, 75, 0.562);
+    border-radius: 20px;
+    height: 40vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.body-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 30vh;
+
+}
+.user-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.profilePictureImg{
+    width: 150px;
+    height: 150px; 
+    border-radius: 100%;
+    margin-bottom: 30px;
+}
+.dashboard-text{
+    color: #fff;
+    text-shadow:
+    -1px -1px 0 #000,
+     0   -1px 0 #000,
+     1px -1px 0 #000,
+     1px  0   0 #000,
+     1px  1px 0 #000,
+     0    1px 0 #000,
+    -1px  1px 0 #000,
+    -1px  0   0 #000;
+}
+p{
+    color: #fff;
+}
