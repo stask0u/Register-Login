@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-import "./Dashboard.css"
+import "./styles/Dashboard.css"
 import Navbar from "./components/Navbar";
 
 function Dashboard() {

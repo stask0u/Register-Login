@@ -26,12 +26,23 @@ router.post('/decode', async (req, res) => {
 
     try {
         const decodedToken = jwt.decode(token);
-        const filteredToken={
-            username:decodedToken.username,
-            email:decodedToken.email,
-            iat:decodedToken.iat,
-            profilePicture: decodedToken.path,
+        let filteredToken;
+        if(decodedToken.path){
+             filteredToken={
+                username:decodedToken.username,
+                email:decodedToken.email,
+                iat:decodedToken.iat,
+                profilePicture: decodedToken.path,
+            }
+        }else{
+             filteredToken={
+                username:decodedToken.username,
+                email:decodedToken.email,
+                iat:decodedToken.iat,
+                profilePicture: "uploads/profileDefault.png",
+            }
         }
+        
         res.status(200).json(filteredToken);
     } catch (error) {
         console.error('Error decoding token:', error);
