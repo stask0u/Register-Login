@@ -1,14 +1,28 @@
 .register-Form{
     width: 20vw;
-    height: 40vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     margin-top: 6%;
+    background-color: #643f389f;
+    border-radius: 10%;
+}
+.form-Placeholder{
+    background-image: url('../../assets/dashboardBackground.jpg');
+    background-size:cover;
+    
 }
 #avatar{
     display: none;
+}
+.avatarDiv{
+    margin-top: -40px;
+    margin-bottom: 40px;
+}
+.avatarDiv:hover{
+    
 }
 .placeholder{
     display: flex;
@@ -24,12 +38,23 @@
 }
 .placeholder input {
     flex: 2;
-    text-align: right;
+    text-align: left;
+    margin-left: 10px;
 }
 button{
-   border-radius: 5%;
-   border-style: solid;
-    size: 200px;
+    border-color: black;
+    background-color: #643f38;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
 .form-Placeholder{
     width: 100vw;

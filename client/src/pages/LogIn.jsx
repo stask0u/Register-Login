@@ -23,17 +23,21 @@ function LogIn(){
     return(
         <div>
             <Navbar/>
-            <form onSubmit={handleSubmit}>
-                <div>
+            <div className="form-Placeholder">
+                <form onSubmit={handleSubmit} className="register-Form">               
+                <div className="placeholder">
                     <label htmlFor="emailInput">Email</label>
-                    <input type="email" id="emailInput" onChange={(e)=>{setEmail(e.target.value)}}/>
+                    <input type="email" id="emailInput" onChange={(e) => setEmail(e.target.value)}/>
+                    
                 </div>
-                <div>
+                <div className="placeholder">
                     <label htmlFor="passwordInput">Password</label>
-                    <input type="password" id="passwordInput"onChange={(e)=>{setPassword(e.target.value)}}/>
+                    <input type="password" id="passwordInput" onChange={(e) => setPassword(e.target.value)}/>
+                    
                 </div>
-                <button type="submit">Submit</button>
-            </form>
+                <button className="Submit" type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     );
 }

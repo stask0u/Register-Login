@@ -31,8 +31,12 @@ function Register(){
             newErrors.email = 'Email is required';
             hasError = true;
         }
-        if (!password.trim()) {
+        if (!password.trim() ) {
             newErrors.password = 'Password is required';
+            hasError = true;
+        }
+        if(password.trim() && password.length<6){
+            newErrors.password = 'Password is too short';
             hasError = true;
         }
 
@@ -70,7 +74,7 @@ function Register(){
             <Navbar/>
             <div className="form-Placeholder">
                 <form onSubmit={handleSubmit} className="register-Form">
-                <div>
+                <div className="avatarDiv">
                     <label htmlFor="avatar"><img src={avatar} width={'100px'} alt="" /> </label>
                     <input type="file" id="avatar" accept=".jpeg, .png, .jpg" onChange={handleFileChange}/>
                 </div>

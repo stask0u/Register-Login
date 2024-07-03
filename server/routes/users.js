@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const userSchema = require('../schemas/UserSchema');
 const multer = require('multer');
 const path = require('path');
+const bcrypt = require('bcrypt');
 
 const accessTokenSecret = "asdasdas";
 
@@ -62,7 +63,7 @@ router.post('/register', upload.single('profilePicture'), async (req, res) => {
             const newUser = await userSchema.create({
                 username: username,
                 email: email,
-                password: password,
+                password: await bcrypt.hash(password, 10),
                 profilePicture: profilePicture
             });
             res.status(201).send('User registered successfully');
@@ -81,7 +82,7 @@ router.post('/login', async (req,res)=>{
     try {
         const searchUser = await userSchema.findOne({email:email})
        
-        if(searchUser&&searchUser.password==password){
+        if(searchUser&& await bcrypt.compare(password,searchUser.password)){
              const user = {
                 username:searchUser.username,
                 email:email,
