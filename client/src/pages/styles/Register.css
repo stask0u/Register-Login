@@ -1,49 +1,56 @@
-.register-Form{
-    width: 20vw;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 6%;
-    background-color: #643f389f;
-    border-radius: 10%;
+.register-Form {
+  width: 20vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6%;
+  background-color: #643f389f;
+  border-radius: 10%;
 }
-.form-Placeholder{
-    background-image: url('../../assets/dashboardBackground.jpg');
-    background-size:cover;
-    
+.form-Placeholder {
+  background-image: url("../../assets/dashboardBackground.jpg");
+  background-size: cover;
 }
-#avatar{
-    display: none;
+.avatarImg {
+    border-radius: 100%;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
 }
-.avatarDiv{
-    margin-top: -40px;
-    margin-bottom: 40px;
+
+.avatarImg:hover {
+    border-color: black;
 }
-.avatarDiv:hover{
-    
+#avatar {
+  display: none;
 }
-.placeholder{
-    display: flex;
-    flex-direction:row;
-    justify-content: space-between;
-    width: 65%;
-    margin-bottom: 10px;
+.avatarDiv {
+  margin-top: -40px;
+  margin-bottom: 40px;
+}
+.avatarDiv:hover {
+}
+.placeholder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 65%;
+  margin-bottom: 10px;
 }
 .placeholder label {
-    flex: 1;
-    text-align: left;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  flex: 1;
+  text-align: left;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .placeholder input {
-    flex: 2;
-    text-align: left;
-    margin-left: 10px;
+  flex: 2;
+  text-align: left;
+  margin-left: 10px;
 }
-button{
-    border-color: black;
-    background-color: #643f38;
+button {
+  border-color: black;
+  background-color: #643f38;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -56,9 +63,12 @@ button{
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
-.form-Placeholder{
-    width: 100vw;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
+button:hover{
+    background-color: #311f1b;
+}
+.form-Placeholder {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
 }

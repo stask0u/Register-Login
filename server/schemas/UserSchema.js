@@ -1,5 +1,16 @@
 const mongoose = require('mongoose');
 
+const noteSchema = new mongoose.Schema({
+    message: {
+        type: String,
+        required: true
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    }
+});
+
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -21,6 +32,7 @@ const userSchema = new mongoose.Schema({
     profilePicture: {
         type: String
     },
+    Notes:[noteSchema],
     date: {
         type: Date,
         default: Date.now

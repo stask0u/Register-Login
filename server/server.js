@@ -14,9 +14,6 @@ connectDB();
 
 app.use('/images', express.static(path.join(__dirname, '/')));
 
-app.get('/', (req,res)=>{
-    res.send("nigga")
-})
 app.use('/user',users)
 
 

@@ -75,7 +75,7 @@ function Register(){
             <div className="form-Placeholder">
                 <form onSubmit={handleSubmit} className="register-Form">
                 <div className="avatarDiv">
-                    <label htmlFor="avatar"><img src={avatar} width={'100px'} alt="" /> </label>
+                    <label htmlFor="avatar"><img  className="avatarImg" src={avatar} width={'100px'} alt="" /> </label>
                     <input type="file" id="avatar" accept=".jpeg, .png, .jpg" onChange={handleFileChange}/>
                 </div>
                 <div className="placeholder" >

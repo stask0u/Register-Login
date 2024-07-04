@@ -99,6 +99,10 @@ router.post('/login', async (req,res)=>{
     }
 })
 
+router.post('addNote', async (req, res)=>{
+    const note = req.body.note;
+})
+
 function authToken(req,res,next){
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];

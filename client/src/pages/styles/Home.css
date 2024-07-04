@@ -1,0 +1,32 @@
+.userNotes{
+    width: 20vw;
+    height: 40vh;
+    background-color: red;
+    border-radius: 10%;
+}
+.notesPlaceholder{
+    width: 100vw;
+    height: 90vh;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items:  center;
+}
+.noteBtn{
+   width: 100px;
+   height: 50px;
+   font-size: 10px;
+   border-radius: 10px;
+   margin-right: 30px;
+}
+.notesPara{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
