@@ -3,6 +3,9 @@
     height: 40vh;
     background-color: red;
     border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .notesPlaceholder{
     width: 100vw;
@@ -13,6 +16,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: scroll;
 }
 .header{
     display: flex;
@@ -26,7 +30,16 @@
    font-size: 10px;
    border-radius: 10px;
    margin-right: 30px;
+   font-style: bold;
 }
 .notesPara{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+}
+.notes{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

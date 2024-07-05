@@ -34,6 +34,7 @@ router.post('/decode', async (req, res) => {
                 email:decodedToken.email,
                 iat:decodedToken.iat,
                 profilePicture: decodedToken.path,
+                notes:decodedToken.userNotes
             }
         }else{
              filteredToken={
@@ -41,6 +42,7 @@ router.post('/decode', async (req, res) => {
                 email:decodedToken.email,
                 iat:decodedToken.iat,
                 profilePicture: "uploads/profileDefault.png",
+                notes:decodedToken.userNotes
             }
         }
         
@@ -87,7 +89,8 @@ router.post('/login', async (req,res)=>{
                 username:searchUser.username,
                 email:email,
                 password:password,
-                path:searchUser.profilePicture
+                path:searchUser.profilePicture,
+                userNotes:searchUser.Notes
             }
             
             const accessToken = jwt.sign(user,accessTokenSecret)
@@ -98,10 +101,24 @@ router.post('/login', async (req,res)=>{
         console.error(error)
     }
 })
-
-router.post('addNote', async (req, res)=>{
+router.post('/addNote', async (req, res) => {
     const note = req.body.note;
-})
+    const email = req.body.email;
+
+    try {
+        const user = await userSchema.findOne({ email: email });
+        if (user) {
+            user.Notes.push({message:note});
+            await user.save();
+            res.status(200).send("Note added successfully.");
+        } else {
+            res.status(404).send("User not found.");
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("An error occurred while adding the note.");
+    }
+});
 
 function authToken(req,res,next){
     const authHeader = req.headers['authorization'];
