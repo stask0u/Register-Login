@@ -120,6 +120,15 @@ router.post('/addNote', async (req, res) => {
     }
 });
 
+router.post('/notes', async (req,res)=>{
+    const email = req.body.email;
+    if(email){
+        const user = await userSchema.findOne({email:email}).select('Notes')
+        res.status(200).json(user.Notes || [])
+    }else
+    res.status(404).send("User not found")
+})
+
 function authToken(req,res,next){
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
