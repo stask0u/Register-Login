@@ -4,12 +4,21 @@
     height: 40px;
     align-items: center;
     margin-left: 10px;
+
+}
+.messagePlaceholder .buttons {
+    margin-left: auto;
 }
 .notePlaceholder{
     width: 90%;
     height: 60px;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
+    padding-right: 10px;
+}
+.notePlaceholder:hover{
+    background-color: rgba(0, 0, 0, 0.452);
 }
 .dateDiv{
     width: 100%;
@@ -24,4 +33,21 @@
 }
 .stickyNote{
     font-size: 30px;
+}
+.buttons{
+    z-index: 2;
+    display: flex;
+    max-width: 190px;
+}
+
+.editBtns{
+    width: 5px;
+    height: 5px;
+    margin: 0px;
+    margin-right: 5px;
+    padding: 10px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -128,6 +128,24 @@ router.post('/notes', async (req,res)=>{
     }else
     res.status(404).send("User not found")
 })
+router.post('/deleteNote', async (req,res)=>{
+    const email = req.body.email;
+    const noteId = req.body._id;
+    const user = await userSchema.findOne({email:email})
+    if(user){
+        const noteIndex  = user.Notes.findIndex(note => note._id.toString() === noteId);
+        if(noteIndex !== -1 ){
+            user.Notes.splice(noteIndex, 1);
+            await user.save();
+            res.status(200).send('Note removed')
+        }else{
+            res.status(404).send("No note found")
+        }
+    }else{
+        res.status(404).send("User not found");
+    }
+})
+
 
 function authToken(req,res,next){
     const authHeader = req.headers['authorization'];

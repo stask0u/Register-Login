@@ -23,7 +23,7 @@ function Home(){
             const storedAccessToken = Cookies.get('accessToken');
             if (storedAccessToken) {
                 try {
-                    const response = await axios.post('http://localhost:5000/user/decode', { token: storedAccessToken });
+                    const response = await axios.post('http://localhost:5000/user/decode', {token: storedAccessToken});
                     setDecodedToken(response.data);
                 } catch (error) {
                     console.error('Error decoding token:', error);
@@ -78,7 +78,7 @@ function Home(){
                     </div>
                     <div className="notes">
                     {notes.map((element) => (
-                                <Note key={element._id} message={element.message} date={element.date} />
+                                <Note key={element._id} message={element.message} date={element.date} id={element._id} email={decodedToken.email}/>
                             ))}
                     </div>
                 </div>
