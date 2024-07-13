@@ -35,7 +35,6 @@
     font-size: 30px;
 }
 .buttons{
-    z-index: 2;
     display: flex;
     max-width: 190px;
 }

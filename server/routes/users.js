@@ -146,6 +146,24 @@ router.post('/deleteNote', async (req,res)=>{
     }
 })
 
+router.post('/editNote', async (req,res)=>{
+    const email = req.body.email;
+    const noteId = req.body._id;
+    const message = req.body.newMsg;
+    const user = await userSchema.findOne({email:email})
+    if(user){
+        const noteIndex  = user.Notes.findIndex(note => note._id.toString() === noteId);
+        if(noteIndex !== -1 ){
+            user.Notes[noteIndex] = message;
+            await user.save();
+            res.status(200).send('Note Edited')
+        }else{
+            res.status(404).send("No note found")
+        }
+    }else{
+        res.status(404).send("User not found");
+    }
+})
 
 function authToken(req,res,next){
     const authHeader = req.headers['authorization'];
