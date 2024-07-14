@@ -18,8 +18,8 @@ function EditNoteForm({ onClose, onSubmit, note }) {
   return (
     <div className="NoteFormPlaceholder">
       <div className="NoteFormBackground">
-        <button className="closeBtn" onClick={onClose}>Close</button>
-        <form>
+        <button className="closeBtn" id="NoteFormBtn" onClick={onClose}>Close</button>
+        <form className="NoteForm">
           <div className="NoteFormInput">
             <label htmlFor="input">New Message:</label>
             <input

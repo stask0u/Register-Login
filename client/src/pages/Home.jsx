@@ -80,11 +80,12 @@ function Home() {
     const handleEditNoteSubmit = async (updatedMessage) => {
         try {
             const data = {
-                email: editingNote.email,
+                email: decodedToken.email,
                 _id: editingNote._id,
-                message: updatedMessage
+                newMsg: updatedMessage
             };
-            await axios.post('http://localhost:5000/user/editNote', data);
+            console.log(data)
+            const response =  await axios.post('http://localhost:5000/user/editNote', data);
             handleEditCloseForm();
         } catch (err) {
             console.error(err);

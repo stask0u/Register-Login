@@ -154,7 +154,7 @@ router.post('/editNote', async (req,res)=>{
     if(user){
         const noteIndex  = user.Notes.findIndex(note => note._id.toString() === noteId);
         if(noteIndex !== -1 ){
-            user.Notes[noteIndex] = message;
+            user.Notes[noteIndex].message = message;
             await user.save();
             res.status(200).send('Note Edited')
         }else{
