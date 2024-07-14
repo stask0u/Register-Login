@@ -7,7 +7,6 @@ function Navbar(){
         document.cookie = 'accessToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         window.location.href = '/';
     }
-    //SameSite=None
     return(
         
         <div className="background-Container">
@@ -16,7 +15,9 @@ function Navbar(){
                 {hasAccessToken ? (
                     <>
                     <li className="listItem"><a href="/dashboard">Dashboard</a></li>
+                    <li className='listItem'><a href="/notes">Notes</a></li>
                     <li className='listItem'><a href='#' onClick={handleLogOut}>Log Out</a></li>
+                    
                     </>
                     
                 ) : (

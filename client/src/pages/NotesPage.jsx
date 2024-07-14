@@ -8,9 +8,9 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import Note from "./components/Note";
 import NoteForm from "./components/NoteForm";
 import EditNoteForm from "./components/EditNoteForm";
-import "./styles/Home.css";
+import "./styles/NotesPage.css"
 
-function Home() {
+function NotesPage(){
     const [decodedToken, setDecodedToken] = useState(null);
     const [showForm, setShowForm] = useState(false);
     const [showEditNoteForm, setShowEditForm] = useState(false);
@@ -108,7 +108,7 @@ function Home() {
     return (
         <div>
             <Navbar />
-            {/* <div className="notesPlaceholder">
+            <div className="notesPlaceholder">
                 {decodedToken &&
                     <div className="userNotes">
                         <div className="header">
@@ -140,9 +140,9 @@ function Home() {
                     onSubmit={handleEditNoteSubmit}
                     note={editingNote}
                 />
-            )} */}
+            )}
         </div>
     );
 }
 
-export default Home;
+export default NotesPage
