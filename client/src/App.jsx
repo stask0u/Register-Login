@@ -7,6 +7,7 @@ import LogIn from './pages/LogIn';
 import Dashboard from './pages/Dashboard';
 import NotesPage from './pages/NotesPage';
 import Models from './pages/Models';
+import CreateAModel from './pages/CreateAModel';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/dashboard' element={<Dashboard/>}/>
           <Route path='/notes' element={<NotesPage/>}/>
           <Route path='/models' element={<Models/>}/>
+          <Route path='/create-model' element={<CreateAModel/>}/>
       </Routes>
     </BrowserRouter>
   )

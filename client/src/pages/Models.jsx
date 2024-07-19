@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import Navbar from "./components/Navbar";
+import SingleModel from "./components/SingleModel";
+import "./styles/Models.css"
 
 function Box() {
   const mesh = useRef();
@@ -25,12 +27,14 @@ function Models() {
   return (
     <>
       <Navbar></Navbar>
-      <div style={{ height: "100vh", width: "100vw" }}>
-        <Canvas>
-          <ambientLight />
-          <pointLight position={[10, 10, 10]} />
-          <Box />
-        </Canvas>
+      <div className="modelsPlaceholder">
+        <SingleModel MeshToRender={Box}></SingleModel>
+        <SingleModel MeshToRender={Box}></SingleModel>
+        <SingleModel MeshToRender={Box}></SingleModel>
+        <SingleModel MeshToRender={Box}></SingleModel>
+        <SingleModel MeshToRender={Box}></SingleModel>
+        <SingleModel MeshToRender={Box}></SingleModel>
+        <SingleModel MeshToRender={Box}></SingleModel>
       </div>
     </>
   );

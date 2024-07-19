@@ -1,0 +1,9 @@
+.modelsPlaceholder{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.modelsPlaceholder canvas{
+    background-color: #3244F124;
+}

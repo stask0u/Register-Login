@@ -22,17 +22,13 @@ function NoteForm({ onClose }) {
           email: response.data.email,
         };
         const addNote = await axios.post(
-          "http://localhost:5000/user/addNote",
+          "http://localhost:5000/note/addNote",
           newNoteData
         );
-        if (addNote) {
-          console.log("success");
-        }
       } catch (error) {
         console.error("Error decoding token:", error);
       }
     }
-    console.log("Note added:", { message });
     onClose();
   };
   return (

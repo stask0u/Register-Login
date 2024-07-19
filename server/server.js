@@ -4,7 +4,7 @@ const cors = require('cors')
 const connectDB = require('./routes/mongodb')
 const users = require('./routes/users')
 const path = require('path');
-
+const notes = require('./routes/notes')
 
 app.use(express.json())
 app.use(cors())
@@ -13,7 +13,7 @@ app.use(cors())
 connectDB();
 
 app.use('/images', express.static(path.join(__dirname, '/')));
-
+app.use('/note',notes)
 app.use('/user',users)
 
 

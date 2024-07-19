@@ -1,0 +1,17 @@
+.pageBackground{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.sideBar{
+    max-width: 30vw;
+    display: flex;
+    background-color: red;
+    flex-direction: column;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;
+}
+.questionOne{
+    display: flex;
+    flex-direction: row;
+}

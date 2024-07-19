@@ -8,6 +8,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import Note from "./components/Note";
 import NoteForm from "./components/NoteForm";
 import EditNoteForm from "./components/EditNoteForm";
+import { useNavigate } from "react-router-dom";
 import "./styles/NotesPage.css"
 
 function NotesPage(){
@@ -19,6 +20,8 @@ function NotesPage(){
 
     library.add(faPlus);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         const fetchToken = async () => {
             const storedAccessToken = Cookies.get('accessToken');
@@ -28,14 +31,15 @@ function NotesPage(){
                     setDecodedToken(response.data);
                 } catch (error) {
                     console.error('Error decoding token:', error);
+                    navigate('/login');
                 }
             } else {
-                console.log('No token');
+                navigate('/login');
             }
         };
 
         fetchToken();
-    }, []);
+    }, [navigate]);
 
     useEffect(() => {
         if (decodedToken) {
@@ -47,7 +51,7 @@ function NotesPage(){
         try {
             const storedAccessToken = Cookies.get('accessToken');
             if (storedAccessToken && decodedToken) {
-                const response = await axios.post('http://localhost:5000/user/notes', { email: decodedToken.email });
+                const response = await axios.post('http://localhost:5000/note', { email: decodedToken.email });
                 setNotes(response.data || []);
             } else {
                 console.error('No Token');
@@ -84,8 +88,7 @@ function NotesPage(){
                 _id: editingNote._id,
                 newMsg: updatedMessage
             };
-            console.log(data)
-            const response =  await axios.post('http://localhost:5000/user/editNote', data);
+            const response =  await axios.post('http://localhost:5000/note/editNote', data);
             handleEditCloseForm();
         } catch (err) {
             console.error(err);
@@ -98,7 +101,7 @@ function NotesPage(){
                 email: decodedToken.email,
                 _id: element._id
             };
-            await axios.post('http://localhost:5000/user/deleteNote', data);
+            await axios.post('http://localhost:5000/note/deleteNote', data);
             updateNotes();
         } catch (err) {
             console.error(err);

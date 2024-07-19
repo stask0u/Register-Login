@@ -3,7 +3,7 @@ import "./EditNoteForm.css";
 
 function EditNoteForm({ onClose, onSubmit, note }) {
   const [message, setMessage] = useState("");
-
+  const [error,setError] = useState("");
   useEffect(() => {
     if (note) {
       setMessage(note.message);
@@ -12,7 +12,12 @@ function EditNoteForm({ onClose, onSubmit, note }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(message);
+    if (!message.trim()) {
+      setError("Message cannot be empty.");
+    } else {
+      setError("");
+      onSubmit(message);
+    }
   };
 
   return (
@@ -29,6 +34,7 @@ function EditNoteForm({ onClose, onSubmit, note }) {
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
+          {error && <div className="error">{error}</div>}
           <button onClick={handleSubmit}>Confirm</button>
         </form>
       </div>
