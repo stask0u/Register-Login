@@ -1,5 +1,7 @@
 .pageBackground{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
 }
 
 .sideBar{
@@ -14,4 +16,48 @@
 .questionOne{
     display: flex;
     flex-direction: row;
+}
+
+.canvas{
+    background-color: blue;
+    width: 81vw;
+    height: 89vh;
+    border-radius: 20px;
+    margin: 5px;
+}
+input[type=range][orient=vertical]{
+    writing-mode: vertical-lr;
+    direction: rtl;
+    appearance: slider-vertical;
+    width: 16px;
+    vertical-align: bottom;
+}
+.slider{
+display: flex;
+height: 160px;
+}
+.sliderDiv{
+    display: flex;
+    justify-content: center;
+
+}
+.queWithSliders{
+    height: 165px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.iconsInput{
+    width: 20px;
+}
+.icons{
+    display: flex;
+    flex-direction: row;
+    gap:5vw ;
+}
+.pistonData{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

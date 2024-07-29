@@ -7,3 +7,7 @@
 .modelsPlaceholder canvas{
     background-color: #3244F124;
 }
+.singleModel{
+    width: 20vw;
+    height: 20vh;
+}

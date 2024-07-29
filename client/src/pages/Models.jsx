@@ -28,13 +28,17 @@ function Models() {
     <>
       <Navbar></Navbar>
       <div className="modelsPlaceholder">
-        <SingleModel MeshToRender={Box}></SingleModel>
-        <SingleModel MeshToRender={Box}></SingleModel>
-        <SingleModel MeshToRender={Box}></SingleModel>
-        <SingleModel MeshToRender={Box}></SingleModel>
-        <SingleModel MeshToRender={Box}></SingleModel>
-        <SingleModel MeshToRender={Box}></SingleModel>
-        <SingleModel MeshToRender={Box}></SingleModel>
+        <div className="singleModel"> <SingleModel MeshToRender={Box}></SingleModel></div>
+        <div className="singleModel"> <SingleModel MeshToRender={Box}></SingleModel></div>
+        <div className="singleModel"> <SingleModel MeshToRender={Box}></SingleModel></div>
+        <div className="singleModel"> <SingleModel MeshToRender={Box}></SingleModel></div>
+        <div className="singleModel"> <SingleModel MeshToRender={Box}></SingleModel></div>
+        <div className="singleModel"> <SingleModel MeshToRender={Box}></SingleModel></div>
+        <div className="singleModel"> <SingleModel MeshToRender={Box}></SingleModel></div>
+        <div className="singleModel"> <SingleModel MeshToRender={Box}></SingleModel></div>
+        <div className="singleModel"> <SingleModel MeshToRender={Box}></SingleModel></div>
+        <div className="singleModel"> <SingleModel MeshToRender={Box}></SingleModel></div>
+        
       </div>
     </>
   );
