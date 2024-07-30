@@ -1,15 +1,17 @@
 import "./styles/CreateAModel.css";
 import Question from "./components/Question";
-import { useState, useRef } from "react";
+import { useState, useRef,useEffect } from "react";
 import Navbar from "./components/Navbar";
 import SingleModel from "./components/SingleModel";
 import { Canvas, useFrame } from "@react-three/fiber";
+import { useGLTF } from '@react-three/drei';
 import image1 from "../assets/kartinka1.png";
 import image2 from "../assets/kartinka2.png";
 import image3 from "../assets/kartinka3.png";
 
 
-function Box({color, size, roughness, metalness}) {
+function Model({url,color, size, roughness, metalness}) {
+  const { scene } = useGLTF(url);
   const mesh = useRef();
 
   useFrame(() => {
@@ -19,12 +21,20 @@ function Box({color, size, roughness, metalness}) {
     }
   });
 
-  return (
-    <mesh ref={mesh}>
-      <boxGeometry args={[size/2,size/2,size/2]} />
-      <meshStandardMaterial color={color} roughness={roughness} metalness={metalness} />
-    </mesh>
-  );
+  useEffect(() => {
+    if (scene) {
+      scene.traverse((child) => {
+        if (child.isMesh) {
+          child.material.color.set(color);
+          child.material.roughness = roughness;
+          child.material.metalness = metalness;
+          child.scale.set(size/6, size/6, size);
+        }
+      });
+    }
+  }, [scene, color, size, roughness, metalness]);
+
+  return <primitive ref={mesh} object={scene} />;
 }
 
 function CreateAModel() {
@@ -127,7 +137,7 @@ function CreateAModel() {
       </div>
       <div className="canvas">
         {
-          color &&  <SingleModel MeshToRender={Box} meshProps={{ color: color, size:count, roughness:materialAndRoughness.roughness, metalness:materialAndRoughness.metalness }} />
+          color && count && <SingleModel MeshToRender={Model} meshProps={{url:`../../public/EngineModels/${color}${count}cilindura.glb`, color: color, size:count, roughness:materialAndRoughness.roughness, metalness:materialAndRoughness.metalness }} />
         }
       </div>
     
