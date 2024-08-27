@@ -3,3 +3,7 @@
     padding: 0px;
     
 }
+body{
+    background-image: url("./assets/dashboardBackground.jpg");
+    background-size: cover;
+}

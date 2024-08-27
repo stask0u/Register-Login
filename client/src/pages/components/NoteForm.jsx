@@ -34,7 +34,7 @@ function NoteForm({ onClose }) {
   return (
     <div className="noteFormOverlay">
       <div className="noteFormContainer">
-        <button className="closeBtn" onClick={onClose}></button>
+      <button className="closeBtn" id="NoteFormBtn" onClick={onClose}>Close</button>
         <form onSubmit={handleSubmit}>
           <div>
             <label>Message:</label>

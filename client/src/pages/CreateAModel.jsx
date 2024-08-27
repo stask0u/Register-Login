@@ -4,7 +4,7 @@ import { useState, useRef,useEffect } from "react";
 import Navbar from "./components/Navbar";
 import SingleModel from "./components/SingleModel";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF } from '@react-three/drei';
+import { useGLTF, OrbitControls,Stats } from '@react-three/drei';
 import image1 from "../assets/kartinka1.png";
 import image2 from "../assets/kartinka2.png";
 import image3 from "../assets/kartinka3.png";
@@ -130,18 +130,19 @@ function CreateAModel() {
 }
                   </div>
             </div>
-            <div className="sliderDiv"> <input type="range" min={50} max={120} onChange={(e)=>{setPistonHeight(e.currentTarget.value); setCc((Math.PI / 4) * Math.pow(pistonWidth, 2) * e.currentTarget.value * count);console.log(cc)}} orient="vertical" className="slider" /></div>
+            <div className="sliderDiv"> <input type="range" min={50} max={120} onChange={(e)=>{setPistonHeight(e.currentTarget.value); setCc((Math.PI / 4) * Math.pow(pistonWidth, 2) * e.currentTarget.value * count);}} orient="vertical" className="slider" /></div>
           </div>
 
           <button className="createModelBtn">Create</button>
       </div>
       <div className="canvas">
         {
-          color && count && <SingleModel MeshToRender={Model} meshProps={{url:`../../public/EngineModels/${color}${count}cilindura.glb`, color: color, size:count, roughness:materialAndRoughness.roughness, metalness:materialAndRoughness.metalness }} />
+          color && count && <SingleModel MeshToRender={Model} meshProps={{url:`../../EngineModels/${color}${count}cilindura.glb`, color: color, size:count, roughness:materialAndRoughness.roughness, metalness:materialAndRoughness.metalness }} />
         }
       </div>
     
     </div>
+    
     </>
   );
 }

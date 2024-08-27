@@ -1,8 +1,8 @@
 .userNotes{
     width: 40vw;
     height: 60vh;
-    background-color: red;
-    border-radius: 10%;
+    background-color: rgba(94, 51, 51, 0.767);
+    border-radius: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,8 +23,14 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items:  center;
+    width: 90%;
 }
+.divBtn{
+width: 50%;
+display: flex;
+justify-content: flex-end;
 
+}
 .noteBtn{
    width: 100px;
    height: 50px;
@@ -34,7 +40,10 @@
    display: flex;
    justify-content: center;
    align-items: center;
-}
+   border-color: white;
+   border-width: 1px;
+   border-style: solid;
+}   
 .notesPara{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px;

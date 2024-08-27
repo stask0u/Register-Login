@@ -116,9 +116,11 @@ function NotesPage(){
                     <div className="userNotes">
                         <div className="header">
                             <p className="notesPara">Notes</p>
-                            <button onClick={handleAddNoteClick} className="noteBtn">
-                                <FontAwesomeIcon icon="plus" /> Add Note
-                            </button>
+                            <div className="divBtn">
+                                <button onClick={handleAddNoteClick} className="noteBtn">
+                                    <FontAwesomeIcon icon="plus" /> Add Note
+                                </button>
+                            </div>
                         </div>
                         <div className="notes">
                             {notes.map((element) => (
