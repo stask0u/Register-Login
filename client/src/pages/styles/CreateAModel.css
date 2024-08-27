@@ -19,7 +19,6 @@
 }
 
 .canvas{
-    /* background-color: blue; */
     width: 81vw;
     height: 89vh;
     border-radius: 20px;
@@ -43,7 +42,7 @@ height: 160px;
 }
 .queWithSliders{
     height: 165px;
-    width: 100%;
+    width: auto;
     display: flex;
     flex-direction: row;
 }
