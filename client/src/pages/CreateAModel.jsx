@@ -1,15 +1,15 @@
 import "./styles/CreateAModel.css";
 import Question from "./components/Question";
-import { useState, useRef, useEffect, Suspense } from "react";
+import { useState, useRef} from "react";
 import Navbar from "./components/Navbar";
 import SingleModel from "./components/SingleModel";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { useGLTF, OrbitControls, Stats } from '@react-three/drei';
 import image1 from "../assets/kartinka1.png";
 import image2 from "../assets/kartinka2.png";
 import image3 from "../assets/kartinka3.png";
 
-function Model({ url, materialProps,scale  }) {
+function  Model({ url, materialProps,scale  }) {
   const { nodes, materials } = useGLTF(url);
 
   const mesh = useRef();

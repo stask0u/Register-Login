@@ -1,7 +1,6 @@
 import "./SingleModel.css";
 import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import * as THREE from "three";
 import {OrbitControls,Stats } from '@react-three/drei';
 
 function SingleModel({MeshToRender, meshProps}) {
@@ -16,7 +15,6 @@ function SingleModel({MeshToRender, meshProps}) {
         <OrbitControls/>
         <Stats/>
       </Canvas>
-      {console.log(meshProps)}
     </div>
   );
 }
