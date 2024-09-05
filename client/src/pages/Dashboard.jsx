@@ -29,6 +29,10 @@ function Dashboard() {
         fetchToken();
     }, [navigate]);
 
+    const handleImageClick = (event)=>{
+        
+    }
+
     return (
         <>
             <Navbar/>
@@ -37,7 +41,13 @@ function Dashboard() {
                 {
                 decodedToken && <div className="body-background">
                     <div className="body-content">
+                        <div className="imageDiv" >
                         <img src={`http://localhost:5000/images/${decodedToken.profilePicture}`} className="profilePictureImg" alt="Profile" />
+                        <input className="imageChangeButton" type="file" accept=".jpeg, .png, .jpg" onChange={handleImageClick} />
+                            
+                        </div>
+                        
+                        
                         <div className="user-data">
                             <p className="username">Username: {decodedToken.username}</p>
                             <p className="email">Email: {decodedToken.email}</p>

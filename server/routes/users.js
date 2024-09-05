@@ -102,6 +102,18 @@ router.post('/login', async (req,res)=>{
     }
 })
 
+router.post('/profilePicture', async (req,res)=>{
+    const email = req.body.email;
+    try{
+        const searchUser = await userSchema.findOne({email:email})
+        if (searchUser){
+            
+        }
+    }catch(err){
+        console.error(err);
+    }
+})
+
 
 function authToken(req,res,next){
     const authHeader = req.headers['authorization'];
